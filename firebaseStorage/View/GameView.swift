@@ -58,6 +58,7 @@ struct GameView: View {
                 Divider()
                 Button {
                     finishRounds()
+                    showAlert = true
                 } label: {
                     Text("Finish the Game").font(.title3).fontWeight(.medium).foregroundColor(.white).padding(10).background(.blue).cornerRadius(50)
                 }.alert(isPresented: $showAlert) {
@@ -119,6 +120,8 @@ struct GameView: View {
                 }
             }
         }
+        
+        alertMessage = "\(winningTeam[0].name) & \(winningTeam[1].name)"
     }
 
 
